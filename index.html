@@ -2,260 +2,297 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Nogueira Sistemas | Consultoria ERP Protheus TOTVS</title>
+    <title>Nogueira Sistemas | Consultoria Especializada ERP Protheus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Consultoria especializada em ERP Protheus TOTVS. Atuação estratégica, suporte premium e inovação tecnológica.">
+    <meta name="description" content="Consultoria estratégica em ERP Protheus TOTVS. Suporte técnico, customizações ADVPL e soluções sob medida.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
+            --primary: #0ea5e9;
+            --primary-hover: #38bdf8;
             --bg-dark: #020617;
-            --bg-main: #0b1220;
-            --primary: #38bdf8;
-            --text-main: #e5e7eb;
+            --bg-card: #0f172a;
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
+            --text-hero: #f1f5f9;
+            --glass: rgba(15, 23, 42, 0.9);
         }
 
-        * { box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            margin: 0;
-            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-            background-color: var(--bg-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .hero {
-            position: relative;
-            min-height: 90vh;
+        /* --- LOGO NAVEGAÇÃO --- */
+        .logo-container {
+            height: 40px;
             display: flex;
             align-items: center;
+        }
+
+        .logo-img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            text-align: center;
-            background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80');
+            background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.1), transparent),
+                        linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)),
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(2,6,23,0.85), rgba(2,6,23,0.75));
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
+            text-align: center;
             padding: 0 20px;
         }
 
+        .hero-logo {
+            width: 100%;
+            max-width: 450px; 
+            height: auto;
+            margin-bottom: 40px; 
+            animation: fadeInUp 0.8s ease-out;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: auto;
+            max-height: 180px; 
+            object-fit: contain;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
         .hero h1 {
-            font-size: clamp(36px, 5vw, 56px);
-            margin-bottom: 20px;
-            color: #fff;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 800;
+            max-width: 950px;
         }
 
         .hero p {
-            font-size: clamp(18px, 2.5vw, 22px);
-            margin-bottom: 40px;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--text-hero);
+            margin-bottom: 45px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
 
-        .hero .cta {
-            display: inline-block;
-            padding: 16px 40px;
-            background: var(--primary);
-            color: var(--bg-dark);
-            border-radius: 40px;
-            font-weight: 600;
+        .highlight { color: var(--primary); font-weight: 600; }
+
+        /* --- BUTTONS --- */
+        .btn {
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
             text-decoration: none;
-        }
-
-        section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 90px 20px;
-        }
-
-        h2 {
-            font-size: clamp(28px, 4vw, 36px);
-            color: var(--primary);
-            margin-bottom: 30px;
-        }
-
-        .about {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
             align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
 
-        .about img {
-            width: 100%;
-            border-radius: 18px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 15px 30px rgba(14, 165, 233, 0.3);
         }
 
-        .services {
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: var(--primary-hover);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.4);
+        }
+
+        /* --- SECTIONS --- */
+        section { padding: 100px 8%; }
+        h2 { font-size: 2.2rem; margin-bottom: 60px; text-align: center; font-weight: 800; }
+
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .card {
-            background: var(--bg-dark);
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-            transition: transform 0.3s ease;
+            background: var(--bg-card);
+            padding: 45px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.4s;
         }
 
         .card:hover {
-            transform: translateY(-12px);
+            border-color: var(--primary);
+            transform: translateY(-10px);
         }
 
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .tech {
-            background: linear-gradient(180deg, #020617, #030a1a);
-            border-radius: 32px;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-
-        .tech-grid img {
-            width: 100%;
-            border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        }
-
-        .contact {
-            background: var(--bg-dark);
-            border-radius: 32px;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .contact p {
-            font-size: 18px;
-            color: var(--text-muted);
-        }
-
-        .contact .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 16px 42px;
-            background: var(--primary);
-            color: var(--bg-dark);
-            border-radius: 40px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
+        /* --- FOOTER (AJUSTADO) --- */
         footer {
+            padding: 60px 5% 40px;
             text-align: center;
-            padding: 30px 20px;
-            font-size: 14px;
-            color: var(--text-muted);
-            background: #020617;
+            background: #01040a;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo-img {
+            height: 60px; /* Tamanho visível e claro */
+            width: auto;
+            object-fit: contain;
+            opacity: 0.7; /* Leve transparência para não brigar com o conteúdo */
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo-img:hover {
+            opacity: 1; /* Fica 100% nítido ao passar o mouse */
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-logo { max-width: 280px; }
         }
     </style>
 </head>
 <body>
+
+<nav>
+    <div class="logo-container">
+        <img src="logo.png" alt="Nogueira Sistemas Logo" class="logo-img">
+    </div>
+    <div class="nav-links">
+        <a href="#servicos">Soluções</a>
+        <a href="#contato">Contato</a>
+    </div>
+</nav>
+
 <header class="hero">
+    <div class="hero-logo">
+        <img src="logo.png" alt="Nogueira Sistemas">
+    </div>
     <div class="hero-content">
-        <h1>Nogueira Sistemas</h1>
-        <p>Consultoria estratégica em ERP Protheus.</p>
-        <a href="https://wa.me/5532991998857" target="_blank" class="cta">Fale com um Especialista</a>
+        <h1>Inteligência Estratégica em <span class="highlight">ERP Protheus</span></h1>
+        <p>
+            Elevamos o potencial do seu <span class="highlight">core business</span> através de consultoria técnica sênior e inovação contínua.
+        </p>
+        <div class="cta-group">
+            <a href="https://wa.me/5532991998857" class="btn btn-primary">Falar com Consultor</a>
+        </div>
     </div>
 </header>
-<section>
-    <div class="about">
-        <div>
-            <h2>Quem Somos</h2>
-            <p>A <strong>Nogueira Sistemas LTDA</strong> atua como parceira estratégica de empresas que utilizam o ERP Protheus TOTVS, elevando eficiência, segurança e governança tecnológica.</p>
+
+<section id="servicos">
+    <h2>Nossas Soluções</h2>
+    <div class="services-grid">
+        <div class="card">
+            <span class="icon">🔍</span>
+            <h3>Consultoria Técnica</h3>
+            <p>Arquitetura de processos e otimização de módulos nativos com foco em compliance e performance.</p>
         </div>
-        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1000&q=80" alt="Código e Programação">
+        <div class="card">
+            <span class="icon">🛠️</span>
+            <h3>Customizações ADVPL</h3>
+            <p>Desenvolvimento sênior em ADVPL e TL++, garantindo soluções escaláveis e pontos de entrada seguros.</p>
+        </div>
+        <div class="card">
+            <span class="icon">⚡</span>
+            <h3>Integrações API</h3>
+            <p>Conectividade total entre o Protheus e plataformas externas via REST/SOAP de alta disponibilidade.</p>
+        </div>
+        <div class="card">
+            <span class="icon">📊</span>
+            <h3>Data Intelligence</h3>
+            <p>Transformação de dados brutos em indicadores estratégicos para uma gestão baseada em fatos.</p>
+        </div>
     </div>
 </section>
-<section>
-    <h2>Serviços</h2>
-    <div class="services">
-        <div class="card"><h3>Consultoria Protheus</h3><p>Especialistas nos módulos do ERP com visão de negócio.</p></div>
-        <div class="card"><h3>Suporte Técnico</h3><p>Atendimento rápido e altamente especializado.</p></div>
-        <div class="card"><h3>Customizações ADVPL</h3><p>Soluções sob medida e seguras.</p></div>
-        <div class="card"><h3>Implantação</h3><p>Implantações e melhorias contínuas.</p></div>
+
+<section id="contato" style="text-align: center; background: rgba(14, 165, 233, 0.03);">
+    <h2>Vamos impulsionar seu resultado?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 40px;">Conecte-se com nossa consultoria e descubra novas possibilidades para seu ERP.</p>
+    
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://wa.me/5532991998857" target="_blank" class="btn" style="background: #25D366; color: white;">WhatsApp Corporativo</a>
+        <a href="https://www.linkedin.com/company/nogueira-sistemas" target="_blank" class="btn" style="background: #0A66C2; color: white;">LinkedIn Oficial</a>
     </div>
 </section>
-<section class="tech">
-    <h2>Tecnologia & Inovação</h2>
-    <p style="max-width: 900px; margin-bottom: 50px; color: #94a3b8;">
-        Atuamos com forte foco em inovação aplicada aos negócios, desenvolvendo 
-        <strong>customizações avançadas</strong>, <strong>integrações entre sistemas</strong> e soluções sob medida 
-        que ampliam o potencial do ERP Protheus e de plataformas complementares.
-        <br><br>
-        Nosso trabalho é orientado às <strong>melhores práticas de mercado</strong>, garantindo código limpo, seguro, 
-        escalável e preparado para evolução contínua. Mantemos acompanhamento constante das 
-        <strong>novas legislações fiscais, tributárias e trabalhistas</strong>, assegurando conformidade, redução de riscos 
-        e aderência às exigências legais.
-        <br><br>
-        Utilizamos abordagens modernas de desenvolvimento, automação de processos e integração via APIs, 
-        promovendo eficiência operacional, confiabilidade das informações e maior agilidade na tomada de decisão.
-    </p>
 
-    <div class="tech-grid">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80">
-    </div>
-</section>
-<section class="contact">
-    <h2>Contato</h2>
-    <p style="margin-bottom:40px;">Fale com nossos especialistas e conecte-se conosco</p>
-
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
-        
-        <a href="https://wa.me/5532991998857" target="_blank"
-           style="display:flex; align-items:center; gap:14px; padding:18px 28px;
-           background:#020617; border-radius:18px; text-decoration:none; color:#e5e7eb;
-           box-shadow:0 15px 35px rgba(0,0,0,0.4);">
-           
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="#25D366">
-                <path d="M19.11 17.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.2-1.34-.82-.73-1.38-1.63-1.54-1.9-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.93 2.95 4.69 4.13.66.29 1.18.46 1.58.59.66.21 1.26.18 1.73.11.53-.08 1.6-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/>
-                <path d="M16 3C8.83 3 3 8.83 3 16c0 2.82.92 5.43 2.47 7.55L4 29l5.65-1.48A12.94 12.94 0 0 0 16 29c7.17 0 13-5.83 13-13S23.17 3 16 3z"/>
-            </svg>
-            <div>
-                <strong>WhatsApp</strong><br>
-                <span style="color:#94a3b8;">(32) 99199-8857</span>
-            </div>
-        </a>
-
-        <a href="https://www.linkedin.com/company/nogueira-sistemas" target="_blank"
-           style="display:flex; align-items:center; gap:14px; padding:18px 28px;
-           background:#020617; border-radius:18px; text-decoration:none; color:#e5e7eb;
-           box-shadow:0 15px 35px rgba(0,0,0,0.4);">
-           
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#0A66C2">
-                <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8.5 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.16V24h-4V8z"/>
-            </svg>
-            <div>
-                <strong>LinkedIn</strong><br>
-                <span style="color:#94a3b8;">Nogueira Sistemas</span>
-            </div>
-        </a>
-
-    </div>
-</section>
 <footer>
-    © 2026 Nogueira Sistemas LTDA • Consultoria ERP Protheus TOTVS
+    <div class="footer-logo-container">
+        <img src="logo.png" alt="Nogueira Sistemas" class="footer-logo-img">
+    </div>
+    <p style="font-size: 0.8rem; color: var(--text-muted);">
+        © 2026 Nogueira Sistemas LTDA • Especialistas em Tecnologia TOTVS Protheus
+    </p>
 </footer>
+
 </body>
 </html>
